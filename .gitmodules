@@ -1,0 +1,6 @@
+[submodule "ruby-gems"]
+	path = ruby-gems
+	url = C:\\PROTO\\ruby-gems
+[submodule "virtualmin-dav"]
+	path = virtualmin-dav
+	url = C:\\PROTO\\virtualmin-dav
