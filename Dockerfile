@@ -5,15 +5,18 @@
 ## RUNNING
 ##   $ docker run python-for-rapidsporteu-rapidsport-github-io
 
-FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r3
+FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r7
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
-ENV STACKSMITH_STACK_ID="wfm4jdf" \
+ENV STACKSMITH_STACK_ID="gxrklmk" \
     STACKSMITH_STACK_NAME="Python for RapidSporteu/RapidSport.github.io" \
     STACKSMITH_STACK_PRIVATE="1"
 
-RUN bitnami-pkg install python-3.5.2-1 --checksum 6347e5d0c2e318d9bf25a927dc6762bd8a6e490bfab06179179545fa9d3e0d3c
+# Install required system packages
+RUN install_packages libc6 libssl1.0.0 libncurses5 libtinfo5 libreadline6 zlib1g libsqlite3-0
+
+RUN bitnami-pkg install python-3.5.2-2 --checksum 6b4c3906c60994646fb1d4aec3ca5047bd16e84fccedad67158f7a7cb886a4b6
 
 ENV PATH=/opt/bitnami/python/bin:$PATH
 
